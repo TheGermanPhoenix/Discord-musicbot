@@ -1,0 +1,26 @@
+version: '3.2'
+
+services:
+  backofficereader:
+    restart: always
+    build: ./backofficereader/
+    network_mode: "host"
+    volumes:
+      - "/etc/ssl/bor-testserver_com:/etc/ssl/bor-testserver_com"
+      - "/usr/local/backofficereader/files:/usr/local/backofficereader/files"
+      - "/usr/local/docker/backofficereader/backofficereader/files:/usr/local/docker/backofficereader/backofficereader/files"
+
+  cloudflarepass:
+    restart: always
+    build: ./cloudflarepass/
+    network_mode: "host"
+    volumes:
+      - "/usr/local/docker/cloudflarepass:/usr/local/docker/cloudflarepass"
+      - "/usr/bin:/usr/bin"
+
+  musicbot:
+    restart: always
+    build: ./musicbot/
+    network_mode: "host"
+    volumes:
+      - "/usr/local/Docker/musicbot:/usr/local/Docker/musicbot"

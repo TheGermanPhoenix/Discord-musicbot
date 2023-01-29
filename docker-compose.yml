@@ -1,0 +1,10 @@
+version: '3.2'
+
+services:
+  musicbot:
+    restart: always
+    build: ./musicbot/
+    network_mode: "host"
+    volumes:
+      - "/usr/local/Docker/musicbot:/usr/local/Docker/musicbot"
+
