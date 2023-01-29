@@ -2,25 +2,6 @@ import json
 import threading
 from bot import create_bot
 
-"""
-data = [
-    {
-        'token': '',
-        'in_use': False,
-        'name': 'GigaToad',
-        'volume': 20,
-        'voice_channel_id': 0
-    },
-    {
-        'token': '',
-        'in_use': False,
-        'name': 'Ugandan Nuggels',
-        'volume': 20,
-        'voice_channel_id': 0
-    }
-]
-"""
-
 with open('config.json', 'r') as f:
     data = json.load(f)['data']
     for x in data:
